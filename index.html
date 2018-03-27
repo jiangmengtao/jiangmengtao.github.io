@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/28/搭建博客/" data-id="cjb1yyddu000144v2rynqdtdg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/28/搭建博客/" data-id="cjf9r55ik0000e8v2ey9ah0wp" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -133,7 +133,47 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/关于python的词频统计/" data-id="cjb1yyddn000044v2u59t21wg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/10/关于python的词频统计/" data-id="cjf9r55jn0002e8v2qipz1e8l" class="article-share-link">Compartir</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python爬虫" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/03/python爬虫/" class="article-date">
+  <time datetime="2017-04-03T00:34:14.808Z" itemprop="datePublished">2017-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/03/python爬虫/">python爬虫</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是爬虫"><a href="#什么是爬虫" class="headerlink" title="什么是爬虫"></a>什么是爬虫</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">爬虫就是一段能够获取互联网信息（数据）的程序。</span><br><span class="line">一般通过抓取网页获取互联网的信息与数据。</span><br><span class="line">爬虫是获得网页的文本文件并进行解析。</span><br><span class="line">如果数据在文本文件中，可以直接得到，如果在网页外部，则通过解析的结果得到数据所在地址，将该数据下载。</span><br></pre></td></tr></table></figure>
+<h2 id="最简爬虫"><a href="#最简爬虫" class="headerlink" title="最简爬虫"></a>最简爬虫</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">python的第三方库requests。</span><br><span class="line">该库完全符合python的设计理念，利于理解和使用。</span><br><span class="line">导入必要的模块：</span><br><span class="line">	import requests</span><br><span class="line">	from bs4 import BeautifullSoup</span><br><span class="line">	import re</span><br></pre></td></tr></table></figure>
+<h2 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">r = requests.get(<span class="string">'https://github.com/liupengyuan/python_tutorial/blob/master/chapter1/0.md'</span>)</span><br><span class="line"><span class="built_in">print</span>(r.text[:1000])</span><br><span class="line">发送获取(get)请求，该方法返回一个应答(Response)对象r，其中包含该网页的所有信息。</span><br><span class="line"><span class="built_in">print</span>(r.text[:1000])，利用对象r的text属性字符串，打印网页内容，因为内容较多，暂取前1000个字符。</span><br><span class="line">后续由于需要用到Chrome浏览器中的检查功能，因此需要下载安装Chrome浏览器。</span><br><span class="line">通过谷歌浏览器的右键，检查，可以找到要爬的东西在HTML文本文件中的位置。</span><br></pre></td></tr></table></figure>
+<h2 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">这里我们将介绍一个优秀的第三方网页解析包：Beautifulsoap。该包已经随Anaconda安装，名称为bs4。可以用这个包(必要时联合正则表达式)来进行网页解析。</span><br><span class="line">该包已经通过from bs4 import BeautifulSoup在开始导入</span><br><span class="line">soup = BeautifulSoup(r.text, <span class="string">'html.parser'</span>)</span><br><span class="line">contents = soup.find_all(<span class="string">'ul'</span>, attrs=<span class="string">'cm_ul_round'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'type is:'</span>, <span class="built_in">type</span>(contents))</span><br><span class="line">contents[:1]</span><br><span class="line"></span><br><span class="line">函数BeautifulSoup(r.text, <span class="string">'html.parser'</span>)，返回一个BeautifulSoup对象。</span><br><span class="line">第一个参数为要解析的网页文本，第二个参数是解析器的选择，暂选择python内置的<span class="string">'html.parser'</span>作为解析器。</span><br><span class="line">soup.find_all(<span class="string">'ul'</span>, attrs=<span class="string">'cm_ul_round'</span>)，BeautifulSoup对象的方法，可返回指定标签之间的所有内容的ResultSet对象。</span><br><span class="line">其中第一个参数为标签，第二个参数为标签的属性。</span><br><span class="line">根据新闻标题，在Elements标签页面稍加分析可知：新闻标题及链接均在标签对&lt;ul class=<span class="string">"cm_ul_round"</span>&gt;及&lt;/ul&gt;之间，且其他非新闻标题的内容，均不在这种规定了class的&lt;ul&gt;标签之间</span><br></pre></td></tr></table></figure>
+<h2 id="例子3"><a href="#例子3" class="headerlink" title="例子3"></a>例子3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> contents:</span><br><span class="line">    url_titles = line.find_all(<span class="string">'a'</span>)</span><br><span class="line">    <span class="keyword">for</span> url_title <span class="keyword">in</span> url_titles:</span><br><span class="line">        url = url_title.get(<span class="string">'href'</span>)</span><br><span class="line">        title = url_title.string</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">type</span>(url_title), url, title)</span><br><span class="line">    <span class="keyword">if</span> input()==<span class="string">'b'</span>:</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">利用line.find_all(<span class="string">'a'</span>)取得其中在&lt;a&gt;及&lt;/a&gt;标签对(该标签对表示超链接)。</span><br><span class="line">对url_titles进行遍历，每一个对象均为Tag对象，利用Tag对象的get(<span class="string">'href'</span>)方法，该方法可以取得标签的属性值，本例中参数为属性href，其值为超链接的URL</span><br><span class="line">利用标签的string属性，取得该超链接的文本</span><br><span class="line">可以用字典来储存抓取的文字</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/03/python爬虫/" data-id="cjf9r55ir0001e8v2b2dhxoui" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -159,9 +199,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
     </div>
   </div>
 
@@ -169,7 +209,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -179,6 +219,10 @@
         
           <li>
             <a href="/2017/12/10/关于python的词频统计/">关于python的词频统计</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/03/python爬虫/">python爬虫</a>
           </li>
         
       </ul>
@@ -193,8 +237,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Still Sofia<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2018 Still Sofia<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
